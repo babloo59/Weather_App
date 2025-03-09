@@ -146,6 +146,7 @@ function getLocation() {
     }
     else {
         //HW - show an alert for no gelolocation support available
+        alert("Geolocation is not supported by this browser.");
     }
 }
 
@@ -198,6 +199,8 @@ async function fetchSearchWeatherInfo(city) {
         //hW
         loadingScreen.classList.remove("active");
         apiErrorContainer.classList.add("active");
+        apiErrorImg.style.display = "block";
+        apiErrorImg.src = "./image/not-found.png";
         apiErrorMessage.innerText = `${error?.message}`;
         apiErrorBtn.style.display = "none";
     }
